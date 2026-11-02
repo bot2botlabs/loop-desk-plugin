@@ -19,4 +19,4 @@ Tool: `get_loop` on the `loop-desk` MCP server. It's a read.
 
 The MCP server has no close or update tool, so tell the user plainly that resolving a loop isn't available here.
 
-Tool calls need an `ldk_` API key from https://loop.bot2botlabs.com/onboard (`Authorization: Bearer ldk_…`). Loops belong to the key that registered them.
+Without a key, tool calls use the free tier (20 per day per IP, shared public demo space, never billed). For private loops, use an `ldk_` API key from https://loop.bot2botlabs.com/onboard (`Authorization: Bearer ldk_…`). Loops belong to the key that registered them.

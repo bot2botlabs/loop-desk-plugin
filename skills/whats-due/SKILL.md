@@ -20,6 +20,6 @@ Tool: `list_due` on the `loop-desk` MCP server. It's a read, and free on the key
 
 ## Note
 
-Results are scoped to the API key. A shared or demo key shows everyone's demo loops, so check whose key it is before you read the list back as "yours".
+Results are scoped to the API key. Keyless calls, or a shared or demo key, show everyone's demo loops, so check whose key it is before you read the list back as "yours".
 
-Tool calls need an `ldk_` API key from https://loop.bot2botlabs.com/onboard (`Authorization: Bearer ldk_…`). Loops belong to the key that registered them.
+Without a key, tool calls use the free tier (20 per day per IP, shared public demo space, never billed). For private loops, use an `ldk_` API key from https://loop.bot2botlabs.com/onboard (`Authorization: Bearer ldk_…`). Loops belong to the key that registered them.

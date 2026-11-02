@@ -4,9 +4,10 @@
 
 ```bash
 curl -s https://loop.bot2botlabs.com/mcp -H 'content-type: application/json' \
-  -H 'Authorization: Bearer ldk_…' \
   -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"list_due","arguments":{"before":"2026-12-31T00:00:00Z"}}}'
 ```
+
+No key needed for that call: the free tier allows 20 keyless tool calls per day per IP.
 
 Open-loop tracker by Bot2Bot Labs. Register refunds, returns, price-adjustment windows, deliveries, and unanswered asks with a due date, then list what's due. Every register mints a public receipt.
 
@@ -16,7 +17,11 @@ Open-loop tracker by Bot2Bot Labs. Register refunds, returns, price-adjustment w
 
 ## API key and cost
 
-`initialize` and `tools/list` work without a key. **Tool calls need an `ldk_` key** from https://loop.bot2botlabs.com/onboard, sent as `Authorization: Bearer ldk_…`. Registers are metered (see https://loop.bot2botlabs.com/llms.txt); reads are free. This package stores no key.
+**Free tier, no key:** up to 20 tool calls per day per IP (resets 00:00 UTC). Keyless calls run in the shared public demo space and are never billed, so anything you register there is visible to other keyless users. Each keyless response includes a `free_tier` object with `used`, `remaining` and `resets_at`. Past the cap, the server returns JSON-RPC error `-32029` with a link to the free-key page.
+
+**Your own loops:** get a free `ldk_` key (no card) from https://loop.bot2botlabs.com/onboard and send `Authorization: Bearer ldk_…`. Keyed registers are metered (see https://loop.bot2botlabs.com/llms.txt); reads are free. This package stores no key.
+
+Terms: https://loop.bot2botlabs.com/terms · Privacy: https://loop.bot2botlabs.com/privacy
 
 ## Privacy
 
